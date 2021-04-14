@@ -25,7 +25,7 @@ The steps taken to achieve this is as follows:
 2. Pandas
 3. Numpy
 4. Tensorflow 2.4+ with tf.compat.v1 available for training
-5. 
+
 To Run predictions with the Elivio DataSet or to train a new model. Please Read through this Section. 
 ## Step 1
 ### CLONE REPOSITORY
