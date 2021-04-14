@@ -17,3 +17,15 @@ The steps taken to achieve this is as follows:
 3. Build a prediction Model: This is very optional, However, to reduce the inference time since we have to find the distance to all the clusters to find where a sentence belong, we are doing this to help us reduce that time. A model will learn and capture the weigths that predicts the cluster where a sentence should belong
 
 4. After Prediction, we only compare the sentence embeddings in that cluster and recommend the top 5 news ranked by earlier dates and Up_votes. This is very important since we assume readers will only be interested in newest news with highest up_votes
+
+## DEMO
+To Run predictions with the Elivio DataSet or to train a new model. Please Read through this Section. 
+## Step 1
+### CLONE REPOSITORY
+Open your Command Line or Terminal depending on your Operating System. You may create a virtual environment to isolate this project files from your local machine;
+Read here for virtual environment :https://docs.python.org/3/library/venv.html
+But for simplicity, clone this repository by runnung the command below in the terminal line by line
+```
+$ mkdir recommendation
+$ git clone git@github.com:Predstan/eluvio-challenge.git
+```
