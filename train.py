@@ -1,6 +1,10 @@
+"""
 Class Implementation of Model for Predicting Eluvio Dataset.
-The Build Metho
+Please note That unit testing were not performed and 
+may throw the slightest error if not properly used
+Refer to the note.ipynb Notebook for proper Usage
 
+"""
 
 from __future__ import absolute_import
 from __future__ import division
