@@ -1,3 +1,7 @@
+Class Implementation of Model for Predicting Eluvio Dataset.
+The Build Metho
+
+
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -10,7 +14,7 @@ import sys
 import os
 
 import numpy as np
-from six.moves import xrange  # pylint: disable=redefined-builtin
+from six.moves import xrange  
 import tensorflow as tf
 
 from tensorflow.python.platform import gfile
@@ -48,7 +52,22 @@ class Model:
 
 
     
-    def _build(self, input_size, first_dense, second_dense, third_dense, output_size, training, input_1d=None):
+    def _build(self, input_size, first_dense, second_dense, third_dense, output_size, training=True, input_1d=None):
+        """
+            Builds the Model Graph
+            Args:
+                input_size: Size of the Input Vector
+                first_Dense: Number of Neurons in First Dense Layer
+                second_dense: Number of Neurons in Second Dense Layer
+                third_dense: Number of Neurons in third Dense Layer
+                output_size: Number of Categorical Labels
+                training: If training is True, add dropout layers, else: do not add the layer
+                input_1d: Saving a pb model will not work with model build with placeholders 
+                            hence input is a reshape input see saved_pb_model method
+            Return:
+                Last Layer for Softmax and dropout if training else: Last Layer only
+            """
+
 
         dropout_rate = tf.compat.v1.placeholder(tf.float32, name='dropout_rate')
         
@@ -155,6 +174,23 @@ class Model:
             return final_layer
 
     def train(self, learn_rate, rate_step, dropout_rate, display_step, save_step, batch_size, training_time, eval_step, train_data, Validation_data, init=False):
+        """
+            Train Model 
+            Args
+                learn_rate: Should be a list of two values for learning Rate e.g [0.001, 0.0001]
+                rate_step: iteration to step into second learning rate
+                dropout_rate: percentage of dropout
+                display_step: When to display Loss and Validation on training
+                save_step: Steps to save Checkpoints, 
+                batch_size: batch Size to train at a time
+                training_time: Total Training Time
+                eval_step: Evaluate Validation Data
+                train_data: Provide array of training data with label at the end [-1] index of each data
+                Validation_data: Provide array of validation data with label at the end [-1] index of each data 
+                init: Default to False for Model initialization at firdt Call of the Model Class
+            Returns:
+                training and Validation History of Model as Dictionary
+        """
         self._save_step = save_step
         self._ground_truth_input = tf.compat.v1.placeholder(
             tf.int64, [None], name='groundtruth_input')
@@ -265,6 +301,16 @@ class Model:
 
 
     def get_next_batch(self, batch_size, dataset):
+        """
+        Get Next Batch Size from Dataset
+        
+        Args:
+            Batch_size: Number of Data from the set
+            dataset: Dataset to get data from
+        returns:
+            data: [batch_size, input_size]
+            labels: [batch_size, 1]
+        """
         np.random.shuffle(dataset)
         
         data = dataset[:batch_size, :-1]
@@ -273,6 +319,16 @@ class Model:
         return data, labels
 
     def evaluate(self, input_data, labels, verbose= 1):
+        """
+            Evaluate Data
+
+            Args:
+                Input_data: Data points to evaluate
+                labels: labels of data
+            return:
+                validation accuracy
+                validation loss
+        """
 
         validation_accuracy, val_crossentropy_value = self._sess.run(
                         [self._evaluation_step, self._cross_entropy_mean],
@@ -289,8 +345,10 @@ class Model:
 
 
     def predict(self, input_data):
-        
+        """
+        Predict Data input and return Label 
 
+        """
 
         predicted = self._sess.run(
             [self._final_layer],
@@ -305,6 +363,9 @@ class Model:
 
 
     def load_checkpoint(self, path=0):
+        """
+        Load from checkpoint Path
+        """
         
         if path==0:
             try:
