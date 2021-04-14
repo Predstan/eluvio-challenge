@@ -58,4 +58,4 @@ You should enter your sentence to recommend title in line with the command above
 or any sentence of your choice and Model will predict the top 50 by earliest date and Highest Vote
 
 # Training a new Model
-### Follow implementation in the Jupyter Notebook nte.ipnb
+### Follow implementation in the Jupyter Notebook note.ipynb
