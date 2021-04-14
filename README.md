@@ -4,6 +4,7 @@
 ### Problem Formation
 #### Suggest Title of news for Reader Based on Interest and Interested Topic
 
+
 ### Methodology
 To solve this Problem, I will be building an embedding Model from the Dataset to disparately show the similarities between the titles available on the Dataset which will then be Fed into a Kmeans Algorithm(Unsupervised Learning) to create Clusters which we can use to model a recommendation system. However, to kickstart this project and due to time limits, I will use available models like the Tensorflow's Sentence Encoder and the Gensim Word2vec Model as my embeddings
 
@@ -27,5 +28,26 @@ Read here for virtual environment :https://docs.python.org/3/library/venv.html
 But for simplicity, clone this repository by runnung the command below in the terminal line by line
 ```
 $ mkdir recommendation
+$ cd recommendation
+$ cd eluvio-challenge
 $ git clone git@github.com:Predstan/eluvio-challenge.git
 ```
+
+## Step 2:
+### Unzip the Model Directory 
+```
+$ unzip Model.zip
+$ !rm Model.zip
+```
+## Step 3: 
+### Run prediction
+```
+$ ./recommend.py <Enter Your Sentence Here>
+```
+You should enter your sentence to recommend title in line with the command above. For a start you can try commands below:
+1. Syria
+2. Putin
+3. Russia
+4. Samsung
+5. Donald Trump
+6. Apple phones in the Market
