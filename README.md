@@ -13,7 +13,7 @@ The steps taken to achieve this is as follows:
 1. Create a Sentence Embeddings: I will be using the Tensorflow's sentence Encoder due to time constraints and will not be buiding a sentece Encoder for a start. Tensorflow's sentence encoder is available at https://tfhub.dev/google/universal-sentence-encoder/4. The output is a 512 long 1 dimension vector for each sentence fed into the network
 
 
-2. Label data with Kmeans Algorithm: We find the optimal number of cluster for the dataset. However, i have considered limiting the number of Cluster to a maximum of 100. This is due to computational power that is required as number of cluster increases. We find the OPtimal number between 10 - 100
+2. Label data with Kmeans Algorithm: I find the optimal number of cluster for the dataset. However, i have considered limiting the number of Cluster to a maximum of 100. This is due to computational power that is required as number of cluster increases. We find the OPtimal number between 10 - 100
 
 3. Build a prediction Model: This is very optional, However, to reduce the inference time since we have to find the distance to all the clusters to find where a sentence belong, we are doing this to help us reduce that time. A model will learn and capture the weigths that predicts the cluster where a sentence should belong
 
