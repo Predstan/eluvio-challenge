@@ -43,7 +43,7 @@ $ cd eluvio-challenge
 ### Unzip the Model Directory 
 ```
 $ unzip Model.zip
-$ !rm Model.zip
+$ rm Model.zip
 ```
 ## Step 3: 
 ### Run prediction
