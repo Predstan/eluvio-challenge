@@ -35,8 +35,8 @@ But for simplicity, clone this repository by runnung the command below in the te
 ```
 $ mkdir recommendation
 $ cd recommendation
-$ cd eluvio-challenge
 $ git clone git@github.com:Predstan/eluvio-challenge.git
+$ cd eluvio-challenge
 ```
 
 ## Step 2:
