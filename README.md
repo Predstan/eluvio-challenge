@@ -20,6 +20,12 @@ The steps taken to achieve this is as follows:
 4. After Prediction, we only compare the sentence embeddings in that cluster and recommend the top 5 news ranked by earlier dates and Up_votes. This is very important since we assume readers will only be interested in newest news with highest up_votes
 
 ## DEMO
+### Requirements:
+1. Python 3.6+
+2. Pandas
+3. Numpy
+4. Tensorflow 2.4+ with tf.compat.v1 available for training
+5. 
 To Run predictions with the Elivio DataSet or to train a new model. Please Read through this Section. 
 ## Step 1
 ### CLONE REPOSITORY
@@ -49,5 +55,7 @@ You should enter your sentence to recommend title in line with the command above
 2. Putin
 3. Russia
 4. Samsung
-5. Donald Trump
-6. Apple phones in the Market
+or any sentence of your choice and Model will predict the top 50 by earliest date and Highest Vote
+
+# Training a new Model
+### Follow implementation in the Jupyter Notebook nte.ipnb
