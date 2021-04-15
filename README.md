@@ -55,6 +55,10 @@ You should enter your sentence to recommend title in line with the command above
 2. Putin
 3. Russia
 4. Samsung
+5. Obama
+6. Donald Trump
+7. School Students.
+
 or any sentence of your choice and Model will predict the top 50 by earliest date and Highest Vote
 
 # Training a new Model
