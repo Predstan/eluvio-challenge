@@ -50,7 +50,7 @@ $ rm Model.zip
 ```
 $ ./recommend.py <Enter Your Sentence Here>
 ```
-You should enter your sentence to recommend title in line with the command above. For a start you can try commands below:
+You should enter your sentence to recommend title in line with the command above. For a start you can try words below:
 1. Syria
 2. Putin
 3. Russia
